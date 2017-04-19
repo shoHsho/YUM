@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="CustodySystem.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Custody System</title>
+  <asp:ContentPlaceHolder ID="head" runat="server">
+      <link href="css/mstyles.css" rel="stylesheet" type="text/css" />
+      
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="wrapper">
+<form id="form1" runat="server">
+  <div class="logo-menu-container">
+    <div class="logo">Custody System</div>
+    <div class="menu">
+      <ul>
+       <li class="nobg"><a href="ContactUs.aspx">اتصل بنا</a></li>
+        <li><a href="About.aspx">حول</a></li>
+         <li><a href="Services.aspx">الخدمات</a></li>
+        <li><a href="Home.aspx" class="active" 
+          style="color: #999999">الرئيسية</a></li>
+       
+       
+      </ul>
+    </div>
+  </div>
+  <div class="searchform-container">
+    <div class="searchform-content">&nbsp;</div>
+    <div class="search">
+      <div class="search-input">
+        <input type="text" name="search" class="search-input-textfield" />
+      </div>
+      <div class="search-icon"><a href="#"><img src="images/search-icon.png" alt="search" /></a></div>
+    </div>
+  </div>
+  <div class="page">
+    <div class="main-banner"><img src="images/banner.jpg" alt="banner" /></div>
+    <div class="clear"></div>
+    <div class="left-column">
+      <div class="dark-panel" dir="rtl">
+        <div class="dark-panel-top"></div>
+        <div class="dark-panel-center" dir="rtl">
+          <ul>
+            <li>
+              <h1>دخول</h1>
+            </li>
+            <li>
+              <p></p>
+            </li>
+           <li class="username">
+            <asp:TextBox ID="txtuser" runat="server" class="login-input"></asp:TextBox>
+            </li>
+            <li class="password">
+              <asp:TextBox ID="txtpass" runat="server" class="login-input" TextMode="Password"></asp:TextBox>
+            </li>
+            <li class="button">
+             <table> <tr>
+               <td> <asp:Button ID="Button1" runat="server" Text="دخول" class="button1" 
+                    Height="34px" Width="98px" onclick="Button1_Click"/> </td>
+                  <td>  <asp:Button ID="createB" runat="server" Text="إنشاء كلمة مرور" class="button1" 
+                    Height="34px" Width="98px" onclick="create_Click"/></td>
+                    </tr></table>
+                    </li>
+          </ul>
+        </div>
+        <div class="dark-panel-bottom">
+             
+                 </div>
+      </div>
+      <div class="light-panel" dir="rtl">
+        <div class="light-panel-center" dir="rtl">
+          <h1 class="style1">المعلومات</h1>
+          <ul dir="rtl">
+            <li dir="rtl"><a href="#">الأسماء </a>:</li>
+            <li dir="rtl"><a href="#">تسنيم المراد</a></li>
+            <li dir="rtl">أ<a href="#">شواق الربيش</a></li>
+            <li dir="rtl">المشرف:</li>
+              <li dir="rtl">د. علي خليفة</li>
+            <li dir="rtl">مشرف مساعد:</li>
+            <li dir="rtl">أ. <a href="#">سمر الدعيجي</a></li>
+          </ul>
+            <p>
+                &nbsp;</p>&nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+    
+      
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    </div>
+  </div>
+  </form>
+</div>
+<div class="clear"></div>
+<div class="copyrights">جميع الحقوق محفوظه لنظام العهد والامانات</div>
+ </body>
+</html>

@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CustodySystem.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        <link href="css/mstyles.css" rel="stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<!--
+<script type="text/javascript">
+    function visiblePanel(id) {
+        var el = document.getElementById(id);
+
+        if (el.style.display == 'none')
+            el.style.display = 'block';
+            else el.style.display = 'none';
+    }
+</script>-->
+    <form id="form2" runat="server">
+    <div class="wrapper">
+  <div class="logo-menu-container">
+    <div class="logo">Custody System</div>
+    <div class="menu">
+      <ul>
+
+      <li onclick="ShowOnly('AcceptDiv')" style="cursor:pointer;" class="nobg"><a>قبول </a></li>
+      <li onclick="ShowOnly('ReturnDiv')" style="cursor:pointer; " class="nobg"><a>إرجاع عهد</a></li>
+      <li onclick="ShowOnly('OrderDiv')" style="cursor:pointer; " class="nobg"><a>طلب عهد</a></li>
+      <li onclick="ShowOnly('permiDiv')" style="cursor:pointer; " ><a href="Usersprivilege.aspx">الصلاحيات</a></li>
+      <li onclick="ShowOnly('ReportDiv')" style="cursor:pointer; color: #999999" class="active" ><a>التقارير</a></li>
+       
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="page">
+    <div class="left-column">
+      <div class="dark-panel">
+        <div class="dark-panel-top"></div>
+        <div class="dark-panel-center">
+          <ul>
+            <li>
+              <h1>مرحبا</h1>
+            </li>
+          </ul>
+            <h1>
+                <asp:Literal ID="ltrfullName" runat="server"></asp:Literal></h1>
+            <p>
+                &nbsp;</p>
+                <asp:Button  class="button1" ID="Button1" runat="server" Text="خروج" 
+                Height="34px" Width="98px" onclick="Button1_Click" />
+                
+           
+        </div>
+        <div class="dark-panel-bottom"></div>
+      </div>
+      <div class="light-panel">
+        <div class="light-panel-top"></div>
+       <div class="light-panel-center">
+          <h1>المعلومات</h1>
+          <ul>
+            <li>
+                <asp:Literal ID="ltrName" runat="server"></asp:Literal>: الاســم</li>
+            <li>
+                <asp:Literal ID="ltrDept" runat="server"></asp:Literal>: القسم</li>
+            <li>
+                <asp:Literal ID="ltrJob" runat="server"></asp:Literal>: الوظيفة</li>
+            <li>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="txtPhone" Display="Dynamic" ErrorMessage="*" 
+                    ForeColor="#CC0000" SetFocusOnError="True" ValidationGroup="ww"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtPhone" runat="server" Width="125px" CssClass="textbox"></asp:TextBox>: الجوال</li>
+            <li>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="txtpass" Display="Dynamic" ErrorMessage="*" 
+                    ForeColor="#CC0000" SetFocusOnError="True" ValidationGroup="ww"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtpass" runat="server" TextMode="Password" Width="125px" CssClass="textbox"></asp:TextBox>: كلمة المرور</li>
+          
+               <li>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                       ControlToValidate="txtconfirm" Display="Dynamic" ErrorMessage="*" 
+                       ForeColor="#CC0000" SetFocusOnError="True" ValidationGroup="ww"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtconfirm" runat="server" TextMode="Password" Width="125px" CssClass="textbox"></asp:TextBox>: تأكيد المرور</li>
+                 <span>
+               <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                   ErrorMessage="كلمة المرور غير متطابقة" ControlToValidate="txtconfirm" 
+                   ControlToCompare="txtpass" Display="Dynamic" SetFocusOnError="True" 
+                   ForeColor="#CC0000" ValidationGroup="ww"></asp:CompareValidator></span>
+            <li>
+                               <asp:Button  class="button1" ID="Button2" runat="server" Text="تحديث" 
+                Height="34px" Width="98px" onclick="Button2_Click" ValidationGroup="ww" />
+                
+           
+        </li>
+          </ul>
+            <p>
+                &nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="right-column-content">
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+        
+              <p>
+                  </p>
+        
+        </asp:ContentPlaceHolder>
+      
+      </div>
+    </div>
+  </div>
+<div class="clear"></div>
+<div class="copyrights">جميع الحقوق محفوظه لنظام العهد والامانات
+  </div>
+   
+    </form>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="Scripts/MainScript.js"></script>
+
+</body>
+</html>
