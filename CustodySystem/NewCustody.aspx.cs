@@ -147,6 +147,17 @@ namespace CustodySystem
                
             }
            
-        } 
+        }
+
+       
+
+        protected void BtnDelete_Click1(object sender, EventArgs e)
+        {
+            SqlDataSource1.Delete();
+        }
+
+       
+
+       
     }
 }

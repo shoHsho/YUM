@@ -147,6 +147,7 @@ Logo And Menu Styles Start
 }
 .menu ul li {
 	float:left;
+   
 	display:block;
 	width:91px;
 	height:42px;
@@ -156,9 +157,12 @@ Logo And Menu Styles Start
 }
 .menu ul li a {
 	color:#9a9a9a;
+   
+  
 }
 .menu ul li a:hover {
 	color:#ffffff;
+    
 }
 .menu ul li a.active {
 	color:#ffffff;
